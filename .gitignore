@@ -1,0 +1,19 @@
+﻿# --- Python / environment ---
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Secrets ---
+.env
+
+# --- Vector store (rebuildable from support_assistant/docs/*.txt) ---
+support_assistant/chroma_db/
+
+# --- IMPORTANT: DO NOT add *.db, *.csv, *.joblib, *.png here. ---
+# These are graded deliverables (books.db, titanic.csv, best_pipeline.joblib,
+# chart images) and MUST be committed, not ignored. Ignoring them would make
+# the grader unable to see required outputs.

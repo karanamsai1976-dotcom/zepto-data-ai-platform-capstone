@@ -1,0 +1,31 @@
+﻿# --- Module 1: Data Pipeline ---
+requests
+beautifulsoup4
+lxml
+
+# --- Shared: data handling ---
+pandas
+numpy
+
+# --- Module 2: Analytics + ML ---
+seaborn
+matplotlib
+scikit-learn
+imbalanced-learn
+joblib
+jupyterlab
+
+# --- Module 3: Support Assistant ---
+sentence-transformers
+chromadb
+langgraph
+pydantic
+fastapi
+uvicorn
+python-dotenv
+
+# --- Testing ---
+pytest
+
+# --- README tables ---
+tabulate
