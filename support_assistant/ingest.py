@@ -1,4 +1,4 @@
-"""Chunk the policy corpus, embed it, and store it in ChromaDB. Idempotent --
+﻿"""Chunk the policy corpus, embed it, and store it in ChromaDB. Idempotent --
 re-running this does not create duplicate chunks."""
 
 import chromadb
@@ -11,10 +11,12 @@ from support_assistant.config import (
 
 def load_documents():
     """Each of the 8 short policy files is treated as a single chunk -- they
-    are already paragraph-sized, so no further splitting is needed."""
+    are already paragraph-sized, so no further splitting is needed.
+    utf-8-sig strips a leading BOM if present (PowerShell's Out-File -Encoding
+    utf8 writes one); harmless if the file has no BOM."""
     documents = []
     for path in sorted(DOCS_DIR.glob("doc_*.txt")):
-        text = path.read_text(encoding="utf-8").strip()
+        text = path.read_text(encoding="utf-8-sig").strip()
         doc_id = path.stem  # e.g. "doc_01"
         documents.append({"id": f"{doc_id}#0", "text": text, "doc_id": doc_id})
     return documents
